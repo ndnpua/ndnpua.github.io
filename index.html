@@ -4,7 +4,7 @@
 	<title>NDNPUA</title>
 	<link rel="stylesheet" type="text/css" href="stylee.css">
 </head>
-<body>
+<body onload="namaKetik()">
 	<header>
 		<div class="main">
 			<ul>
@@ -13,15 +13,31 @@
 		        <a class="nav-link" href="Tugas_2_Natasya_Pua.html">
 		        PROFIL
 		        </a>
-		       </ul>
+		   		</li>
 		</div>
+
 		<div class="title">
-			<h1>NDNPUA</h1>
+			<h1 id="text-welcome"></h1>
 		</div>
 
 		<div class="button">
 			<a href="video.html" class="btn">VIDEO</a>
+			<a href="gambar.html" class="btn">GAMBAR</a>
 		</div>
 	</header>
+
+	<script type="text/javascript">
+		var i = 0;
+		var txt = "NDNPUA";
+		var speed = 500;
+
+		function namaKetik(){
+			if(i<txt.length){
+				document.getElementById('text-welcome').innerHTML += txt.charAt(i);
+				i++;
+				setTimeout(namaKetik, speed); 
+			}
+		}
+	</script>
 </body>
 </html>
